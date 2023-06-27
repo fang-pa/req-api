@@ -10,7 +10,7 @@ require('dotenv').config()
 
 router.post('/l', async (req, res) =>{
     const { userID } = req.body
-    return res.status(200).json(await Users.findOne({ userID }))
+    return res.status(200).json(await Users.findOne({ userID:userID }))
 })
 
 router.post('/login', async (req, res) => {
