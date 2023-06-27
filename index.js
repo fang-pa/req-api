@@ -3,6 +3,7 @@ const app = express();
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const cors = require('cors');
+const allowMethods = require('allow-methods');
 const port = process.env.PORT || 3000;
 require('dotenv').config();
 
@@ -13,7 +14,6 @@ app.use(cors())
 
 // เชื่อม Database 
 mongoose.connect(process.env.DB_Connection,{ useNewUrlParser: true, useUnifiedTopology: true })
-
 app.listen(port, "0.0.0.0")
 
 // imports from Router
@@ -23,7 +23,7 @@ const dataRoute = require('./routers/data');
 const formReqRoute = require('./routers/formReq');
 
 // routes from routers
-app.use('', homeRoute)
-app.use('/user', userRoute)
-app.use('/data', dataRoute)
-app.use('/form', formReqRoute)
+app.use(allowMethods(['get', 'head', 'post','put','delete']),'', homeRoute)
+app.use(allowMethods(['get', 'head', 'post','put','delete']),'/user', userRoute)
+app.use(allowMethods(['get', 'head', 'post','put','delete']),'/data', dataRoute)
+app.use(allowMethods(['get', 'head', 'post','put','delete']),'/form', formReqRoute)
