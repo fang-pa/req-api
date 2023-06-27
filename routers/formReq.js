@@ -39,7 +39,7 @@ router.post('/req', auth, async (req, res) => {
             }
         }
         for (let i = 0; i <= form.requireInfo.sub_teach.length; i++) {
-            const {lineToken} = await Users.findById(form.requireInfo.sub_teach[i]?.teacher)
+            const {lineToken} = await Users.findById(form.requireInfo.sub_teach[i].teacher ?? false)
             if (lineToken.thereIs) {await line.notify('คุณมีคำร้องใหม่',lineToken.token)}
         }
 
