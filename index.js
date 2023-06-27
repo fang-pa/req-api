@@ -16,6 +16,14 @@ mongoose.connect(process.env.DB_Connection,{ useNewUrlParser: true, useUnifiedTo
 
 app.listen(port, "0.0.0.0")
 
-app.get('/', (req, res) => {
-    return res.json({mgs:"Hello World"})
-})
+// imports from Router
+const homeRoute = require('./routers/home');
+const userRoute = require('./routers/user');
+const dataRoute = require('./routers/data');
+const formReqRoute = require('./routers/formReq');
+
+// routes from routers
+app.use('', homeRoute)
+app.use('/user', userRoute)
+app.use('/data', dataRoute)
+app.use('/form', formReqRoute)
