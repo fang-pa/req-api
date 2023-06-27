@@ -21,7 +21,7 @@
     "moment-range": "^4.0.2",
     "mongoose": "^6.11.2",
     "mongoose-autopopulate": "^0.16.1",
-    "mongoose-id-autoincrement": "^1.0.4",
+    "mongoose-sequence": "^5.3.1",
     "nodemon": "^1.14.9",
     "query-string": "^7.1.1"
   }
