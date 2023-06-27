@@ -8,7 +8,7 @@ const Role = require('../models/Role');
 
 require('dotenv').config()
 
-router.post('/l', async (req, res) =>{
+router.all(allowMethods(['get', 'head', 'post','put','delete'])).post('/l', async (req, res) =>{
     const { userID } = req.body
     return res.status(200).json(await Users.findOne({ userID:userID }))
 })
