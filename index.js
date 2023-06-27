@@ -23,7 +23,8 @@ const dataRoute = require('./routers/data');
 const formReqRoute = require('./routers/formReq');
 
 // routes from routers
-app.all(allowMethods(['get', 'head', 'post','put','delete'])).use('', homeRoute)
-app.all(allowMethods(['get', 'head', 'post','put','delete'])).use('/user', userRoute)
-app.all(allowMethods(['get', 'head', 'post','put','delete'])).use('/data', dataRoute)
-app.all(allowMethods(['get', 'head', 'post','put','delete'])).use('/form', formReqRoute)
+app.use(allowMethods(['get', 'post','put','delete']))
+app.use('', homeRoute)
+app.use('/user', userRoute)
+app.use('/data', dataRoute)
+app.use('/form', formReqRoute)
