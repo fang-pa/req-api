@@ -19,9 +19,9 @@
     "jsonwebtoken": "^9.0.0",
     "moment": "^2.29.4",
     "moment-range": "^4.0.2",
-    "mongoose": "^6.5.4",
-    "mongoose-auto-increment": "^5.0.1",
+    "mongoose": "^6.11.2",
     "mongoose-autopopulate": "^0.16.1",
+    "mongoose-id-autoincrement": "^1.0.4",
     "nodemon": "^1.14.9",
     "query-string": "^7.1.1"
   }
