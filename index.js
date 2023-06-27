@@ -20,7 +20,7 @@ mongoose.connect(process.env.DB_Connection,
     })
 mongoose.set('strictQuery', true)
 
-app.get('/', (req, res) => {
+app.get('/hello', (req, res) => {
     return res.json({mgs:"Hello World"})
 })
 // Port number for the server
