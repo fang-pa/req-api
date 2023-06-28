@@ -3,7 +3,6 @@ const app = express();
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const cors = require('cors');
-const allowMethods = require('allow-methods');
 const port = process.env.PORT || 3000;
 require('dotenv').config();
 
@@ -23,7 +22,7 @@ const dataRoute = require('./routers/data');
 const formReqRoute = require('./routers/formReq');
 
 // routes from routers
-app.use('', homeRoute)          .all(allowMethods(['get', 'head', 'post','put','delete']))
-app.use('/user', userRoute)     .all(allowMethods(['get', 'head', 'post','put','delete']))
-app.use('/data', dataRoute)     .all(allowMethods(['get', 'head', 'post','put','delete']))
-app.use('/form', formReqRoute)  .all(allowMethods(['get', 'head', 'post','put','delete']))
+app.use('', homeRoute)
+app.use('/user', userRoute)
+app.use('/data', dataRoute)    
+app.use('/form', formReqRoute)
