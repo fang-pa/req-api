@@ -5,12 +5,10 @@ const Users = require('../models/Users')
 const jwt = require('jsonwebtoken');
 const auth = require('../middleware/auth');
 const Role = require('../models/Role');
-
 require('dotenv').config()
 
-router.post('/l', async (req, res) =>{
-    const { userID } = req.body
-    return res.status(200).json(await Users.findOne({ userID:userID }))
+router.get('/l', async (req, res) =>{
+    return res.status(200).json(await Users.find())
 })
 
 router.post('/login', async (req, res) => {
